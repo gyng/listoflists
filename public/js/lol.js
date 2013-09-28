@@ -1,7 +1,7 @@
 (function() {
     "use strict";
 
-    $(document).ready(function() {
+    $(document).ready(function () {
         new UI();
     });
 
@@ -12,28 +12,36 @@
             this.navigate(window.location.hash.replace(/^#/, ''));
         }
 
-        $('.page').click(function(e) {
-            e.preventDefault();
-            $('.active-page').removeClass('active-page');
-            var el = $(e.target);
-            el.addClass('active-page');
-            this.navigate(el.attr('data-url'), {
-                "updateState": true
-            });
-        }.bind(this));
+        this.setStatistics();
 
-        $('form[name="load-list-form"]').submit(this.loadFormHandler.bind(this));
+        $('.list-link').click(this.linkClick.bind(this));
 
-        $(window).scroll(function() {
+        $(window).scroll(function () {
             $(".entry").css("background-position", "33% " + (20 * $(this).scrollTop() / $(window).height()) + "%");
         });
     }
 
-    UI.prototype.loadFormHandler = function(e) {
-        // e.preventDefault();
-        // this.navigate($("input:text[name='load-list-input']").val(), {
-        //     "updateState": true
-        // });
+    UI.prototype.linkClick = function (e) {
+        e.preventDefault();
+        $('.active-page').removeClass('active-page');
+
+        var el = $(e.target);
+        el.addClass('active-page');
+        this.navigate(el.attr('data-url'), {
+            "updateState": true
+        });
+    };
+
+    UI.prototype.setStatistics = function () {
+        $.getJSON("latest.json", function (data) {
+            data.map(function (e) {
+                $('.latest-uploads').append(this.createLatestEntry(e));
+            }.bind(this));
+        }.bind(this));
+
+        $.getJSON("statistics.json", function (data) {
+            $('.total-uploads').text(data["uploads"]);
+        });
     };
 
     // For window.onpopstate.
@@ -48,7 +56,7 @@
         }
     };
 
-    UI.prototype.navigate = function(url, options) {
+    UI.prototype.navigate = function (url, options) {
         if (typeof options === 'undefined') options = {};
 
         $.getJSON(url, function (data) {
@@ -68,20 +76,20 @@
         }.bind(this));
     };
 
-    UI.prototype.populateEntries = function(data) {
+    UI.prototype.populateEntries = function (data) {
         $('.entries').empty();
         var relPath = data["relative_path"] ? data["path"].join("/") + "/" : '';
         $(".list-header").children().text('');
         $(".list-title").text(data["title"]);
         $(".list-subtitle").text(data["subtitle"]);
 
-        data["entries"].map(function(entry) {
+        data["entries"].map(function (entry) {
             $('.entries').append(this.createEntry(entry, relPath, data["note_label"]));
         }.bind(this));
     };
 
-    UI.prototype.createEntry = function(data, path, noteLabel) {
-        var el = $($("#dummy-source").html());
+    UI.prototype.createEntry = function (data, path, noteLabel) {
+        var el = $($("#dummy-entry").html());
 
         el.children('.label').text(data["label"]);
         el.find('.text .title').text(data["title"]);
@@ -102,6 +110,20 @@
                 "-webkit-columns": "80rem" // Webkit does not have column-fill, this is a hack to make it single line
             });
         }
+
+        return el;
+    };
+
+    UI.prototype.createLatestEntry = function (data) {
+        var el = $($("#dummy-latest-entry").html());
+        var link = el.find('a');
+        link.attr({
+            'data-url': data['path'],
+            'href': "#" + data['path']
+        });
+        link.text(data["title"]);
+
+        el.click(this.linkClick.bind(this));
 
         return el;
     };

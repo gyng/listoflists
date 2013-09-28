@@ -33,23 +33,26 @@ nav li {
 nav a {
     padding: 10px 20px;
     margin: 0 0 0 20px;
-    text-decoration: none;
-    color: #000;
-}
-
-nav a:hover {
-    background-color: #ddd;
-}
-
-nav a:visited {
-    color: #000;
 }
 
 nav a:active {
     background-color: #eee;
 }
 
-.active-page {
+a {
+    text-decoration: none;
+    color: #000;
+}
+
+a:hover {
+    background-color: #ddd;
+}
+
+a:visited {
+    color: #000;
+}
+
+nav .active-page {
     background-color: #ddd;
 }
 
@@ -57,6 +60,7 @@ nav a:active {
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
     height: 100%;
     width: 100%;
 }
@@ -71,6 +75,7 @@ nav a:active {
 }
 
 .load-list-submit {
+    width: 10%;
     border: 0;
     padding: 20px;
     font-size: 3.6rem;
@@ -89,6 +94,35 @@ nav a:active {
     align-items: center;
     justify-content: center;
     width: 100%;
+}
+
+.landing .statistics {
+    display: flex;
+    flex-direction: column;
+    width: 85%;
+    color: #666;
+}
+
+.landing .statistics h2 {
+    font-family:'Marcellus SC', serif;
+    color: #666;
+    margin: 20px 0 0 0;
+    font-size: 2.4rem;
+}
+
+.landing .statistics .latest-uploads {
+    list-style: none;
+    padding: 0;
+}
+
+.landing .statistics .latest-entry {
+    font-size: 1.6rem;
+    padding: 0;
+    margin: 0;
+}
+
+.total-uploads:after {
+    content: ' total uploads';
 }
 
 .list-title {

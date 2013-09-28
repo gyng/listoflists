@@ -20,8 +20,8 @@
         <ul>
             <!-- Sample lists -->
             <li><a class="home-link" href="./index.html" data-url="./index.html">HOME</a></li>
-            <li><a class="page" href="#data/aoty/aoty.json" data-url="data/aoty/aoty.json">AOTYOTY</a></li>
-            <li><a class="page" href="#data/afoty/afoty.json" data-url="data/afoty/afoty.json">AFOTYOTY</a></li>
+            <li><a class="page list-link" href="#data/aoty/aoty.json" data-url="data/aoty/aoty.json">AOTYOTY</a></li>
+            <li><a class="page list-link" href="#data/afoty/afoty.json" data-url="data/afoty/afoty.json">AFOTYOTY</a></li>
         </ul>
     </nav>
 
@@ -39,10 +39,16 @@
             <input class="load-list-input" name="post[input]" type="text" placeholder="Upload a JSON list (raw or URL)&hellip;"></input>
             <input class="load-list-submit" type="submit" value="&rarr;">
         </form>
+
+        <div class="statistics">
+            <h2>latest uploads</h2>
+            <ul class="latest-uploads"></ul>
+            <div class="total-uploads"></div>
+        </div>
     </div>
 
-    <!-- Template -->
-    <div id="dummy-source" style="display: none;">
+    <!-- Templates-->
+    <div id="dummy-entry" style="display: none;">
         <li class="entry">
             <div class="label"></div>
             <div class="image-container"></div>
@@ -53,6 +59,12 @@
                <div class="writeup"></div>
                <div class="note"></div>
             </div>
+        </li>
+    </div>
+
+    <div id="dummy-latest-entry" style="display: none;">
+        <li class="latest-entry">
+            <a class="list-link" href="#" data-url=""></a>
         </li>
     </div>
 </body>
