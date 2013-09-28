@@ -1,0 +1,195 @@
+html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    font-size: 62.5%;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+
+    -moz-font-feature-settings:"liga=1, dlig=1";
+    -moz-font-feature-settings:"liga", "dlig";
+    -ms-font-feature-settings:"liga", "dlig";
+    -o-font-feature-settings:"liga", "dlig";
+    -webkit-font-feature-settings:"liga", "dlig";
+    font-feature-settings:"liga", "dlig";
+    word-wrap: break-word;
+}
+
+nav ul {
+    display: flex;
+    flex-direction: row;
+}
+
+nav li {
+    font-size: 1.6rem;
+    font-family: 'Marcellus SC', serif;
+    list-style-type: none;
+}
+
+nav a {
+    padding: 10px 20px;
+    margin: 0 0 0 20px;
+    text-decoration: none;
+    color: #000;
+}
+
+/*nav li! a:hover {*/ /* CSS4 */
+nav a:hover {
+    background-color: #ddd;
+}
+
+nav a:visited {
+    color: #000;
+}
+
+nav a:active {
+    background-color: #eee;
+}
+
+.active-page {
+    background-color: #ddd;
+}
+
+.text {
+    flex: 10;
+    align-items: flex-start;
+    justify-content: flex-start;
+
+    padding: 0 20px 20px 20px;
+    background: rgba(255, 255, 255, 0.9);
+    font-family: 'Vollkorn', Arial, serif; /*font-family: 'Marcellus', serif;*/
+    font-weight: 400;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+}
+
+.subsubtitle {
+    line-height: 1.5;
+    font-size: 1.2rem;
+}
+
+.writeup {
+    -ms-columns: 50rem;
+    -ms-column-gap: 1.5em;
+    -moz-columns: 50rem;
+    -moz-column-gap: 1.5em;
+    -webkit-columns: 50rem;
+    -webkit-column-gap: 1.5em;
+    columns: 50rem;
+    column-gap: 1.5em;
+
+    min-height: 25%;
+    margin: 20px 0 0 0;
+    font-size: 1.8rem;
+    line-height: 1.5;
+    text-align: justify;
+}
+
+.entries {
+    list-style: none;
+    padding-left: 0;
+}
+
+.entry {
+    display: flex;
+    flex-direction: row;
+
+    min-height: 30rem;
+    background-position: 33% 0;
+    background-size: cover;
+    padding: 40px 40px;
+}
+
+.label {
+    display: flex;
+    flex: 2;
+    align-items: flex-start;
+    justify-content: flex-end;
+
+    padding: 20px 20px 0 0;
+    font-family: 'Vollkorn', Arial, serif;
+    font-weight: 400;
+    font-size: 3.6rem;
+    color: #000;
+    text-shadow: 0 0 2px rgba(255, 255, 255, 0.3);
+}
+
+.title {
+    font-size: 3.6rem;
+    margin: 20px 0 0 0;
+    text-transform: uppercase;
+    font-family: 'Marcellus SC', serif;
+}
+
+.list-subtitle {
+    font-size: 1.2rem;
+    font-family: 'Marcellus', serif;
+    margin: 20px 0 40px 0;
+    text-align: center;
+}
+
+.list-title {
+    font-size: 4.8rem;
+    padding: 20px 20px 0 20px;
+    margin: 20px 0 0 0;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: 'Marcellus SC', serif;
+}
+
+.note {
+    /*font-style: italic;*/
+    margin: 20px 0 0 0;
+    font-size: 1.6rem;
+}
+
+.note:not(:empty):before {
+    font-style: normal;
+    font-family: 'Marcellus SC', serif;
+    content: "honourable mentions ";
+}
+
+.image-container {
+    display: flex;
+    flex: 2;
+
+    background-size: contain;
+    background-position: right 0;
+    background-repeat: no-repeat;
+
+    min-width: 8rem;
+    /*max-height: 30rem;*/
+}
+
+@media all and (max-width: 720px) {
+    .entry {
+        flex-direction: column;
+    }
+
+    .year {
+        justify-content: flex-start !important;
+    }
+
+    .image-container {
+        background-position: left 0 !important;
+        min-height: 20rem;
+        margin: 0 0 20px 0 !important;
+    }
+}
+
+/*.entry[data-year='1990'] {
+    background-image: url('../entries/1990background.jpg');
+}
+
+.entry[data-year='1990'] .image-container {
+    background-image: url('../entries/1990poster.jpg');
+
+}
+*/
