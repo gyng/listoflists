@@ -17,7 +17,7 @@
             $('.active-page').removeClass('active-page');
             var el = $(e.target);
             el.addClass('active-page');
-            this.navigate(el.attr('data-url'), true);
+            this.navigate(el.attr('data-url'), { "updateState": true });
         }.bind(this));
 
         $(window).scroll(function () {
@@ -30,21 +30,23 @@
         if (e.state) {
             this.navigate(e.state["url"]);
 
-            if (e.state["active_page"]) {
+            if (e.state["activePage"]) {
                 $('.active-page').removeClass('active-page');
-                $('.page[data-url="' + e.state["active_page"] + '"]').addClass('active-page');
+                $('.page[data-url="' + e.state["activePage"] + '"]').addClass('active-page');
             }
         }
     };
 
-    UI.prototype.navigate = function (url, updateState) {
+    UI.prototype.navigate = function (url, options) {
+        if (typeof options === 'undefined') options = {};
+
         $.getJSON(url, function (data) {
-            if (updateState === true) {
+            if (options["updateState"] === true) {
                 var state = {};
                 state["url"] = url;
-                state["active_page"] = $(".active-page").attr("data-url");
+                state["activePage"] = $(".active-page").attr("data-url");
                 window.location.hash = url;
-                // window.location.hash creates a history item so we replace that
+                // window.location.hash creates a history item so we modify that
                 window.history.replaceState(state, data["title"], window.location.href);
             }
 
