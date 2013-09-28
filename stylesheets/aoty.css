@@ -9,14 +9,11 @@ body {
     margin: 0;
     padding: 0;
     width: 100%;
-    height: 100%;
-
-    -moz-font-feature-settings:"liga=1, dlig=1";
-    -moz-font-feature-settings:"liga", "dlig";
-    -ms-font-feature-settings:"liga", "dlig";
-    -o-font-feature-settings:"liga", "dlig";
-    -webkit-font-feature-settings:"liga", "dlig";
-    font-feature-settings:"liga", "dlig";
+    -moz-font-feature-settings: "liga=1, dlig=1";
+    -moz-font-feature-settings: "liga", "dlig";
+    -ms-font-feature-settings: "liga", "dlig";
+    -webkit-font-feature-settings: "liga", "dlig";
+    font-feature-settings: "liga", "dlig";
     word-wrap: break-word;
 }
 
@@ -38,7 +35,6 @@ nav a {
     color: #000;
 }
 
-/*nav li! a:hover {*/ /* CSS4 */
 nav a:hover {
     background-color: #ddd;
 }
@@ -55,41 +51,20 @@ nav a:active {
     background-color: #ddd;
 }
 
-.text {
-    flex: 10;
-    align-items: flex-start;
-    justify-content: flex-start;
-
-    padding: 0 20px 20px 20px;
-    background: rgba(255, 255, 255, 0.9);
-    font-family: 'Vollkorn', Arial, serif; /*font-family: 'Marcellus', serif;*/
-    font-weight: 400;
-}
-
-.subtitle {
-    font-size: 1.2rem;
-}
-
-.subsubtitle {
-    line-height: 1.5;
-    font-size: 1.2rem;
-}
-
-.writeup {
-    -ms-columns: 50rem;
-    -ms-column-gap: 1.5em;
-    -moz-columns: 50rem;
-    -moz-column-gap: 1.5em;
-    -webkit-columns: 50rem;
-    -webkit-column-gap: 1.5em;
-    columns: 50rem;
-    column-gap: 1.5em;
-
-    min-height: 25%;
+.list-title {
+    font-size: 4.8rem;
+    padding: 20px 20px 0 20px;
     margin: 20px 0 0 0;
-    font-size: 1.8rem;
-    line-height: 1.5;
-    text-align: justify;
+    text-align: center;
+    text-transform: uppercase;
+    font-family:'Marcellus SC', serif;
+}
+
+.list-subtitle {
+    font-size: 1.2rem;
+    font-family:'Marcellus', serif;
+    margin: 20px 0 40px 0;
+    text-align: center;
 }
 
 .entries {
@@ -100,7 +75,6 @@ nav a:active {
 .entry {
     display: flex;
     flex-direction: row;
-
     min-height: 30rem;
     background-position: 33% 0;
     background-size: cover;
@@ -112,13 +86,21 @@ nav a:active {
     flex: 2;
     align-items: flex-start;
     justify-content: flex-end;
-
     padding: 20px 20px 0 0;
     font-family: 'Vollkorn', Arial, serif;
     font-weight: 400;
     font-size: 3.6rem;
     color: #000;
     text-shadow: 0 0 2px rgba(255, 255, 255, 0.3);
+}
+
+.image-container {
+    display: flex;
+    flex: 2;
+    background-size: contain;
+    background-position: right 0;
+    background-repeat: no-repeat;
+    min-width: 8rem;
 }
 
 .title {
@@ -128,24 +110,39 @@ nav a:active {
     font-family: 'Marcellus SC', serif;
 }
 
-.list-subtitle {
+.subtitle {
     font-size: 1.2rem;
-    font-family: 'Marcellus', serif;
-    margin: 20px 0 40px 0;
-    text-align: center;
 }
 
-.list-title {
-    font-size: 4.8rem;
-    padding: 20px 20px 0 20px;
+.subsubtitle {
+    line-height: 1.5;
+    font-size: 1.2rem;
+}
+
+.text {
+    flex: 10;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 0 20px 20px 20px;
+    background: #fff;
+    background: rgba(255, 255, 255, 0.9);
+    font-family: 'Vollkorn', Arial, serif;
+    font-weight: 400;
+}
+
+.writeup {
+    -ms-columns: 50rem;
+    -moz-columns: 50rem;
+    -webkit-columns: 50rem;
+    columns: 50rem;
+    min-height: 25%;
     margin: 20px 0 0 0;
-    text-align: center;
-    text-transform: uppercase;
-    font-family: 'Marcellus SC', serif;
+    font-size: 1.8rem;
+    line-height: 1.5;
+    text-align: justify;
 }
 
 .note {
-    /*font-style: italic;*/
     margin: 20px 0 0 0;
     font-size: 1.6rem;
 }
@@ -153,19 +150,7 @@ nav a:active {
 .note:not(:empty):before {
     font-style: normal;
     font-family: 'Marcellus SC', serif;
-    content: "honourable mentions ";
-}
-
-.image-container {
-    display: flex;
-    flex: 2;
-
-    background-size: contain;
-    background-position: right 0;
-    background-repeat: no-repeat;
-
-    min-width: 8rem;
-    /*max-height: 30rem;*/
+    content: 'honourable mentions ';
 }
 
 @media all and (max-width: 720px) {
@@ -174,22 +159,12 @@ nav a:active {
     }
 
     .year {
-        justify-content: flex-start !important;
+        justify-content: flex-start;
     }
 
     .image-container {
-        background-position: left 0 !important;
+        background-position: left 0;
         min-height: 20rem;
-        margin: 0 0 20px 0 !important;
+        margin: 0 0 20px 0;
     }
 }
-
-/*.entry[data-year='1990'] {
-    background-image: url('../entries/1990background.jpg');
-}
-
-.entry[data-year='1990'] .image-container {
-    background-image: url('../entries/1990poster.jpg');
-
-}
-*/
