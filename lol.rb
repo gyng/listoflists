@@ -4,6 +4,7 @@ require 'open-uri'
 require 'json'
 
 set :public_folder, 'public'
+set :port, 8083
 OpenSSL::SSL::VERIFY_PEER = OpenSSL::SSL::VERIFY_NONE
 
 get "/" do
