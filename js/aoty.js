@@ -61,11 +61,11 @@
         $(".list-subtitle").text(data["subtitle"]);
 
         data["entries"].map(function (entry) {
-            $('.entries').append(this.createEntry(entry, relPath));
+            $('.entries').append(this.createEntry(entry, relPath, data["note_label"]));
         }.bind(this));
     };
 
-    UI.prototype.createEntry = function (data, path) {
+    UI.prototype.createEntry = function (data, path, noteLabel) {
         var el = $($("#dummy-source").html());
 
         el.children('.label').text(data["label"]);
@@ -74,6 +74,7 @@
         el.find('.text .subsubtitle').text(data["subsubtitle"]);
         el.find('.text .writeup').text(data["writeup"]);
         el.find('.text .note').text(data["note"].join(", "));
+        el.find('.text .note').attr("data-label", noteLabel);
         el.css("background-image", 'url("' + path + data["images"]["background"] + '")');
         el.children('.image-container').css("background-image", 'url("' + path + data["images"]["poster"] + '")');
 

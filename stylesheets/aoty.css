@@ -63,13 +63,14 @@ nav a:active {
 .list-subtitle {
     font-size: 1.2rem;
     font-family:'Marcellus', serif;
-    margin: 20px 0 40px 0;
+    margin: 20px 0 20px 0;
     text-align: center;
 }
 
 .entries {
     list-style: none;
-    padding-left: 0;
+    padding: 0;
+    margin: 20px 0 20px 0;
 }
 
 .entry {
@@ -150,7 +151,7 @@ nav a:active {
 .note:not(:empty):before {
     font-style: normal;
     font-family: 'Marcellus SC', serif;
-    content: 'honourable mentions ';
+    content: attr(data-label);
 }
 
 @media all and (max-width: 720px) {
