@@ -10,11 +10,14 @@ List of Lists is a small Javascript + Sinatra web application for the creation a
         gem install sinatra
         gem install thin
 
-3. Run the Sinatra app with `ruby lol.rb`
+3. Run the Sinatra app with
+
+        ruby lol.rb
+
 4. View your site at [http://localhost:8083](http://localhost:8083)
 
 ## Config
-Change the port
+The port can be changed in `lol.rb`. Change `set :port, 8083` to whichever port you desire.
 
 ## Features
 
@@ -27,3 +30,4 @@ Change the port
 
 * JSON list creator
 * Fix page not refreshing when popping history state back to index.html
+* Move from *Feeling-Driven Development* to a proper test framework.
