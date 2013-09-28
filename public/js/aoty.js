@@ -1,32 +1,43 @@
-(function () {
+(function() {
     "use strict";
 
-    $(document).ready(function () {
+    $(document).ready(function() {
         new UI();
     });
 
     function UI() {
-        window.onpopstate = this.onpopstate.bind(this);
+        window.onpopstate = this.onPopState.bind(this);
 
         if (window.location.hash) {
             this.navigate(window.location.hash.replace(/^#/, ''));
         }
 
-        $('.page').click(function (e) {
+        $('.page').click(function(e) {
             e.preventDefault();
             $('.active-page').removeClass('active-page');
             var el = $(e.target);
             el.addClass('active-page');
-            this.navigate(el.attr('data-url'), { "updateState": true });
+            this.navigate(el.attr('data-url'), {
+                "updateState": true
+            });
         }.bind(this));
 
-        $(window).scroll(function () {
+        $('form[name="load-list-form"]').submit(this.loadFormHandler.bind(this));
+
+        $(window).scroll(function() {
             $(".entry").css("background-position", "33% " + (20 * $(this).scrollTop() / $(window).height()) + "%");
         });
     }
 
+    UI.prototype.loadFormHandler = function(e) {
+        // e.preventDefault();
+        // this.navigate($("input:text[name='load-list-input']").val(), {
+        //     "updateState": true
+        // });
+    };
+
     // For window.onpopstate.
-    UI.prototype.onpopstate = function (e) {
+    UI.prototype.onPopState = function(e) {
         if (e.state) {
             this.navigate(e.state["url"]);
 
@@ -37,11 +48,11 @@
         }
     };
 
-    UI.prototype.navigate = function (url, options) {
+    UI.prototype.navigate = function(url, options) {
         if (typeof options === 'undefined') options = {};
 
         $.getJSON(url, function (data) {
-            if (options["updateState"] === true) {
+                if (options["updateState"] === true) {
                 var state = {};
                 state["url"] = url;
                 state["activePage"] = $(".active-page").attr("data-url");
@@ -50,24 +61,26 @@
                 window.history.replaceState(state, data["title"], window.location.href);
             }
 
+            $(".landing").css('display', 'none');
+
             document.title = data["title"];
             this.populateEntries(data);
         }.bind(this));
     };
 
-    UI.prototype.populateEntries = function (data) {
+    UI.prototype.populateEntries = function(data) {
         $('.entries').empty();
         var relPath = data["relative_path"] ? data["path"].join("/") + "/" : '';
         $(".list-header").children().text('');
         $(".list-title").text(data["title"]);
         $(".list-subtitle").text(data["subtitle"]);
 
-        data["entries"].map(function (entry) {
+        data["entries"].map(function(entry) {
             $('.entries').append(this.createEntry(entry, relPath, data["note_label"]));
         }.bind(this));
     };
 
-    UI.prototype.createEntry = function (data, path, noteLabel) {
+    UI.prototype.createEntry = function(data, path, noteLabel) {
         var el = $($("#dummy-source").html());
 
         el.children('.label').text(data["label"]);

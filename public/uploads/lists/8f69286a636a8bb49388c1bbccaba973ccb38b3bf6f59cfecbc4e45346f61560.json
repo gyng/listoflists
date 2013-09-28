@@ -1,0 +1,59 @@
+{
+  "title": "TV & OVA Animu of the Years of All Years",
+  "relative_path": true,
+  "path": [
+    "data",
+    "aoty"
+  ],
+  "note_label": "honourable mentions ",
+  "entries": [
+    {
+      "label": 1990,
+      "title": "Nadia: Secret of Blue Water",
+      "subtitle": "ふしぎの海のナディア",
+      "subsubtitle": "Hideaki Anno & Shinji Higuchi/GAINAX, Group TAC",
+      "writeup": "In the the turn of the 20th century, Nadia is a teenaged orphancircus acrobat searching for her father. She also wishes to return to her home in Africa. After being rescued at sea by a mysterious submarine, they discover high adventure, and an ancient conspiracy that threatens the very existence of the human race.",
+      "note": [],
+      "images": {
+        "background": "1990background.jpg",
+        "poster": "1990poster.jpg"
+      }
+    },
+    {
+      "label": 1992,
+      "title": "Sailor Moon",
+      "subtitle": "美少女戦士セーラームーン",
+      "subsubtitle": "Junichi Sato/Toei Animation",
+      "writeup": "One day, Usagi Tsukino, clumsy 2nd-year middle school student (8th grader), stumbles upon a talking cat named Luna. Luna tells her that she is destined to be Sailor Moon, 'champion of love and justice', and she must search for the fabled Moon Princess. Usagi finds friends that turn out to be destined senshi as well, and together they fight to save the world from the certain doom brought upon by the Dark Kingdom (Queen Beryl, the generals, Metallia).",
+      "note": [],
+      "images": {
+        "background": "1992background.jpg",
+        "poster": "1992poster.jpg"
+      }
+    },
+    {
+      "label": 1993,
+      "title": "The Irresponsible Captain Tylor",
+      "subtitle": "無責任艦長タイラー",
+      "subsubtitle": "Kōichi Mashimo/Tatsunoko Production",
+      "writeup": "Justy Ueki Tylor thought a career in the United Planets Space Force would give him an easy life: enlist, get a desk job, spend the rest of his life in quiet, boring comfort. No sooner does he take the qualifying exam than war breaks out with the Raalgon Empire, and circumstances quickly conspire to land this volunteer off the street in command of the cruiser 'Soyokaze'. Now Tylor faces two uphill battles—against the Raalgon fleet that wants to kill him, and against his own crew, who expect him to conform to some standard of military discipline. But as the war rages, Tylor's easy-going ways might have a better chance of converting his crew than vice-versa.",
+      "note": [],
+      "images": {
+        "background": "1993background.jpg",
+        "poster": "1993poster.jpg"
+      }
+    },
+    {
+      "label": 1995,
+      "title": "Neon Genesis Evangelion",
+      "subtitle": "新世紀エヴァンゲリオン",
+      "subsubtitle": "Hideaki Anno/GAINAX",
+      "writeup": "In 2000, the 'Second Impact', a global cataclysm, destroys most of Antarctica and leads to the deaths of half of all humanity. The Impact, thought by the public to have been a high-speed meteorite impact, causes devastating tsunamis, changes in the Earth's axial tilt (leading to global climate change), and later geopolitical unrest (including general economic distress and nuclear war). Over the next ten years, the research organization GEHIRN and its benefactor, the mysterious SEELE organization, achieve a number of impressive scientific and engineering goals, including the creation of giant humanoids known as Evangelions and the construction of Tokyo-3, a militarized civilian city located on one of the last dry sections of Japan, in preparation for the arrival of beings known as Angels.",
+      "note": [],
+      "images": {
+        "background": "1995background.jpg",
+        "poster": "1995poster.jpg"
+      }
+    }
+  ]
+}

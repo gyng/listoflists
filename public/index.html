@@ -19,17 +19,29 @@
     <nav>
         <ul>
             <!-- Sample lists -->
+            <li><a class="home-link" href="./index.html" data-url="./index.html">H</a></li>
             <li><a class="page" href="#data/aoty/aoty.json" data-url="data/aoty/aoty.json">AOTYOTY</a></li>
             <li><a class="page" href="#data/afoty/afoty.json" data-url="data/afoty/afoty.json">AFOTYOTY</a></li>
         </ul>
     </nav>
 
-    <header class="list-header">
-        <h1 class="list-title"></h1>
-        <p class="list-subtitle"></p>
-    </header>
-    <ol class="entries"></ol>
+    <div class="list">
+        <header class="list-header">
+            <h1 class="list-title"></h1>
+            <p class="list-subtitle"></p>
+        </header>
+        <ol class="entries"></ol>
+    </div>
 
+    <!-- Landing Page -->
+    <div class="landing">
+        <form name="load-list-form" action="/upload" method="post">
+            <input class="load-list-input" name="post[input]" type="text" placeholder="Upload a JSON list&hellip;" default="https://gist.github.com/gyng/65e77838d5906c03e355/raw/aa7168d478116de47c3408102aa476cc81cb3754/testaoty.json"></input>
+            <input class="load-list-submit" type="submit" value="&rarr;">
+        </form>
+    </div>
+
+    <!-- Template -->
     <div id="dummy-source" style="display: none;">
         <li class="entry">
             <div class="label"></div>
