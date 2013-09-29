@@ -169,6 +169,10 @@ nav .active-page {
     margin: 2rem 0 0 0;
 }
 
+.list-header *:empty, .entries:empty {
+    display: none;
+}
+
 .entry {
     display: flex;
     flex-direction: row;
