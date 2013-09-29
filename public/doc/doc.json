@@ -10,8 +10,11 @@
       "title": "JSON Format",
       "subtitle": "",
       "subsubtitle": "",
-      "writeup": "Lists are JSON-defined. Check out doc/doc.json [1] for the JSON file defining this page. Leave \"relative_path\" set to false as it is used for internal lists. All fields are optional: empty fields are not rendered. The layout requires flexbox support (latest Firefox or Chrome) and uses @media queries (responsive – resize your browser window!).",
-      "note": ["Test note"],
+      "writeup": [
+        "Lists are defined in JSON. Check out doc/doc.json [1] for the JSON file defining this page. Leave \"relative_path\" set to false as it is used for internal lists. All fields are optional: empty fields are not rendered. The layout requires flexbox support (latest Firefox or Chrome) and uses @media queries (responsive – resize your browser window!).",
+        "If the writeup is an array it is treated as a collection of paragraphs."
+        ],
+      "note": ["Hello, world!"],
       "links": [
         {
           "title": "Sample JSON",

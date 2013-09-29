@@ -95,7 +95,16 @@
         el.find('.text .title').text(data["title"]);
         el.find('.text .subtitle').text(data["subtitle"]);
         el.find('.text .subsubtitle').text(data["subsubtitle"]);
-        el.find('.text .writeup').text(data["writeup"]);
+
+        var parHtml = "<p></p>";
+        if (typeof data["writeup"] !== 'string') {
+            data["writeup"].map(function (paragraph){
+                el.find('.text .writeup').append($(parHtml).text(paragraph));
+            });
+        } else {
+            el.find('.text .writeup').append($(parHtml).text(data["writeup"]));
+        }
+
         el.find('.text .note').text(data["note"].join(", "));
         el.find('.text .note').attr("data-label", noteLabel);
 
@@ -108,8 +117,13 @@
             });
         }
 
-        el.css("background-image", 'url("' + path + data["images"]["background"] + '")');
-        el.children('.image-container').css("background-image", 'url("' + path + data["images"]["poster"] + '")');
+        if (data["images"]["background"]) {
+            el.css("background-image", 'url("' + path + data["images"]["background"] + '")');
+        }
+
+        if (data["images"]["poster"]) {
+            el.children('.image-container').css("background-image", 'url("' + path + data["images"]["poster"] + '")');
+        }
 
         if (data["writeup"].length < 400) {
             var writeup = el.find('.text .writeup');

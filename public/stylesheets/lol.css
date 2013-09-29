@@ -237,10 +237,14 @@ nav .active-page {
     -webkit-columns: 50rem;
     columns: 50rem;
     min-height: 25%;
-    margin: 2rem 0 0 0;
     font-size: 1.8rem;
     line-height: 1.5;
     text-align: justify;
+}
+
+.writeup p {
+    margin: 2rem 0 0 0;
+    padding: 0;
 }
 
 .note {
