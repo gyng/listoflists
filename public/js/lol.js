@@ -125,7 +125,8 @@
             el.children('.image-container').css("background-image", 'url("' + path + data["images"]["poster"] + '")');
         }
 
-        if (data["writeup"].length < 400) {
+        if ((typeof data["writeup"] === 'string' && data["writeup"].length < 415) ||
+            (typeof data["writeup"] === 'object' && data["writeup"].join().length < 415)) {
             var writeup = el.find('.text .writeup');
             writeup.css({
                 "-moz-column-fill": "auto",
