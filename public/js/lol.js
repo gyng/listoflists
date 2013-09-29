@@ -98,6 +98,16 @@
         el.find('.text .writeup').text(data["writeup"]);
         el.find('.text .note').text(data["note"].join(", "));
         el.find('.text .note').attr("data-label", noteLabel);
+
+        if (data["links"]) {
+            data["links"].map(function (e) {
+                var link = $($("#dummy-link").html());
+                link.children().attr('href', e["href"]);
+                link.children().text(e["title"]);
+                el.find('.text .links').append(link);
+            });
+        }
+
         el.css("background-image", 'url("' + path + data["images"]["background"] + '")');
         el.children('.image-container').css("background-image", 'url("' + path + data["images"]["poster"] + '")');
 
