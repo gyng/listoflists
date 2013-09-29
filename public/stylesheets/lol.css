@@ -7,16 +7,22 @@ html {
 }
 
 body {
+    display: flex;
+    flex-direction: column;
     margin: 0;
     padding: 0;
     width: 100%;
-    height: 80%;
+    height: 100%;
     -moz-font-feature-settings: "liga=1, dlig=1";
     -moz-font-feature-settings: "liga", "dlig";
     -ms-font-feature-settings: "liga", "dlig";
     -webkit-font-feature-settings: "liga", "dlig";
     font-feature-settings: "liga", "dlig";
     word-wrap: break-word;
+}
+
+nav {
+    min-height: 5rem;
 }
 
 nav ul {
@@ -249,6 +255,10 @@ nav .active-page {
     font-style: normal;
     font-family: 'Marcellus SC', serif;
     content: attr(data-label);
+}
+
+.template {
+    display: none;
 }
 
 @media only screen and (min--moz-device-pixel-ratio: 2),
