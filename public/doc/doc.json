@@ -16,6 +16,10 @@
         {
           "title": "Sample JSON",
           "href": "doc/doc.json"
+        },
+        {
+          "title": "GitHub repository",
+          "href": "https://github.com/gyng/listoflists"
         }
       ],
       "images": {
