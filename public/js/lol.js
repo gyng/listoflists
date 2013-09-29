@@ -32,8 +32,9 @@
 
     UI.prototype.parallaxBackground = function () {
         $('.entry').each(function (i, e) {
-            var h = $(window).height();
-            var pos = Math.min(100, Math.max(0, 100 * (h - e.getBoundingClientRect().top) / h));
+            var elementHeight = e.getBoundingClientRect().bottom - e.getBoundingClientRect().top;
+            var h = $(window).height() + elementHeight;
+            var pos = Math.min(100, Math.max(0, 100 * (h - e.getBoundingClientRect().top - elementHeight) / h));
             $(e).css("background-position", "33% " + pos + "%");
         });
     };
