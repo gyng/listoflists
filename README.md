@@ -12,7 +12,7 @@ List of Lists is a small Javascript + Sinatra web application for the creation a
 
 3. Run the Sinatra app with
 
-        ruby lol.rb
+        ruby lol.rb -o 0.0.0.0
 
 4. View your site at [http://localhost:8083](http://localhost:8083)
 
