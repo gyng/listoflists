@@ -75,7 +75,7 @@ nav .active-page {
     width: 75%;
     max-width: 80rem;
     font-size: 3.6rem;
-    font-family: 'Vollkorn', Arial, serif;
+    font-family: 'Vollkorn', Georgia, serif;
     border: 0;
     border-bottom: solid #ddd 2px;
 }
@@ -177,9 +177,14 @@ nav .active-page {
     display: flex;
     flex-direction: row;
     min-height: 30rem;
-    background-position: 33% 0;
+    background-position: 0 0;
     background-size: cover;
     padding: 4rem;
+    transition: background-position 0.2s; /* My little Chrome can't be this slow! */
+}
+
+.entry div {
+    transition: all 0.5s;
 }
 
 .label {
@@ -188,7 +193,7 @@ nav .active-page {
     align-items: flex-start;
     justify-content: flex-end;
     padding: 2rem 2rem 0 0;
-    font-family: 'Vollkorn', Arial, serif;
+    font-family: 'Vollkorn', Georgia, serif;
     font-weight: 400;
     font-size: 3.6rem;
     color: #000;
@@ -227,7 +232,7 @@ nav .active-page {
     padding: 0 2rem 2rem 2rem;
     background: #fff;
     background: rgba(255, 255, 255, 0.9);
-    font-family: 'Vollkorn', Arial, serif;
+    font-family: 'Vollkorn', Georgia, serif;
     font-weight: 400;
 }
 

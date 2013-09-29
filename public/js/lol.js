@@ -13,12 +13,10 @@
         }
 
         this.setStatistics();
+        this.parallaxBackground();
 
         $('.list-link').click(this.linkClick.bind(this));
-
-        $(window).scroll(function () {
-            $(".entry").css("background-position", "33% " + (20 * $(this).scrollTop() / $(window).height()) + "%");
-        });
+        $(window).scroll(this.parallaxBackground);
     }
 
     UI.prototype.linkClick = function (e) {
@@ -29,6 +27,14 @@
         el.addClass('active-page');
         this.navigate(el.attr('data-url'), {
             "updateState": true
+        });
+    };
+
+    UI.prototype.parallaxBackground = function () {
+        $('.entry').each(function (i, e) {
+            var h = $(window).height();
+            var pos = Math.min(100, Math.max(0, 100 * (h - e.getBoundingClientRect().top) / h));
+            $(e).css("background-position", "33% " + pos + "%");
         });
     };
 
