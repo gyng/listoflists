@@ -61,6 +61,7 @@
             }
         } else if (!window.location.hash) {
             // We don't have a list loaded, display landing
+            $('.active-page').removeClass('active-page');
             $(".list").hide();
             $(".landing").show();
         }
