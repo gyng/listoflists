@@ -1,0 +1,23 @@
+[
+  {
+    "external": true,
+    "href": "./index.html",
+    "path": "./index.html",
+    "title": "HOME"
+  },
+  {
+    "href": "#",
+    "path": "doc/doc.json",
+    "title": "DOCS"
+  },
+  {
+    "href": "#",
+    "path": "data/aoty/aoty.json",
+    "title": "AOTYOTY"
+  },
+  {
+    "href": "#",
+    "path": "data/afoty/afoty.json",
+    "title": "AFOTYOTY"
+  }
+]

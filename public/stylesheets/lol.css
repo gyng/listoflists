@@ -284,10 +284,6 @@ nav .active-page {
        only screen and (min-device-pixel-ratio: 2),
        only screen and (max-width: 749px) {
 
-    html {
-        font-size: 75%;
-    }
-
     body {
         display: block;
     }
