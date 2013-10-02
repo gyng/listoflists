@@ -1,6 +1,6 @@
 # listoflists
 
-List of Lists is a small Javascript + Sinatra web application for the creation and presentation of JSON-defined lists. Flexbox support is required for viewing.
+List of Lists is a small Javascript + Sinatra web application for the creation and presentation of JSON-defined lists. Flexbox support is required for viewing. I also hate parallax scrolling effects which is why I'm using them.
 
 ## Installation
 
@@ -29,5 +29,4 @@ The port can be changed in `lol.rb`. Change `set :port, 8083` to whichever port 
 ### TODO
 
 * JSON list creator
-* Fix page not refreshing when popping history state back to index.html
 * Move from *Feeling-Driven Development* to a proper test framework.

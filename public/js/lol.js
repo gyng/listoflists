@@ -13,7 +13,6 @@
         }
 
         this.setStatistics();
-        this.parallaxBackground();
 
         $('.list-link').click(this.linkClick.bind(this));
         $(window).scroll(this.parallaxBackground);
@@ -60,6 +59,10 @@
                 $('.active-page').removeClass('active-page');
                 $('.page[data-url="' + e.state["activePage"] + '"]').addClass('active-page');
             }
+        } else if (!window.location.hash) {
+            // We don't have a list loaded, display landing
+            $(".list").hide();
+            $(".landing").show();
         }
     };
 
@@ -76,10 +79,12 @@
                 window.history.replaceState(state, data["title"], window.location.href);
             }
 
-            $(".landing").css('display', 'none');
+            $(".landing").hide();
+            $(".list").show();
 
             document.title = data["title"];
             this.populateEntries(data);
+            this.parallaxBackground();
         }.bind(this));
     };
 
