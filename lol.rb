@@ -64,10 +64,8 @@ end
 def increment_upload_count
   File.open("public/statistics.json", "a+") do |f|
     begin
-
-      puts f.read
-
-      stats = JSON.parse(f.read)
+        s = f.read
+        stats = JSON.parse(s)
     rescue
       stats = { "uploads" => 0 }
     end
