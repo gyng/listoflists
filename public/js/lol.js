@@ -12,6 +12,7 @@
             this.navigate(window.location.hash.replace(/^#/, ''));
         }
 
+        this.createNavLinks();
         this.setStatistics();
 
         $('.list-link').click(this.linkClick.bind(this));
@@ -38,10 +39,18 @@
         });
     };
 
+    UI.prototype.createNavLinks = function () {
+        $.getJSON("nav_links.json", function (data) {
+            data.map(function (e) {
+                $('.nav-links').append(this.createLink("#dummy-nav-link", e));
+            }.bind(this));
+        }.bind(this));
+    };
+
     UI.prototype.setStatistics = function () {
         $.getJSON("latest.json", function (data) {
             data.map(function (e) {
-                $('.latest-uploads').append(this.createLatestEntry(e));
+                $('.latest-uploads').append(this.createLink("#dummy-latest-entry", e));
             }.bind(this));
         }.bind(this));
 
@@ -152,16 +161,18 @@
         return el;
     };
 
-    UI.prototype.createLatestEntry = function (data) {
-        var el = $($("#dummy-latest-entry").html());
+    UI.prototype.createLink = function (template, data) {
+        var el = $($(template).html());
         var link = el.find('a');
         link.attr({
             'data-url': data['path'],
-            'href': "#" + data['path']
+            'href': data['href'] || '#'
         });
         link.text(data["title"]);
 
-        el.click(this.linkClick.bind(this));
+        if (!data["external"]) {
+            el.click(this.linkClick.bind(this));
+        }
 
         return el;
     };
