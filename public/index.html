@@ -67,6 +67,22 @@
         </li>
     </div>
 
+    <template>
+        <li class="entry">
+        dicks
+            <div id="label"></div>
+            <div id="image-container"></div>
+            <div id="text">
+               <div id="title"></div>
+               <div id="subtitle"></div>
+               <div id="subsubtitle"></div>
+               <div id="writeup"></div>
+               <div id="note"></div>
+               <ul id="links"></ul>
+            </div>
+        </li>
+    </template>
+
     <div class="template" id="dummy-latest-entry">
         <li class="latest-entry">
             <a class="list-link" href="#" data-url=""></a>
@@ -80,5 +96,12 @@
     <div class="template" id="dummy-nav-link">
         <li class="page list-link"><a href="#"></a></li>
     </div>
+
+    <template>
+        <style> /*...*/ </style>
+        <div id="label"><content></content></div>
+        Value: <span id="counterVal">{{counter}}</span><br>
+        <button on-tap="{{increment}}">Increment</button>
+    </template>
 </body>
 </html>

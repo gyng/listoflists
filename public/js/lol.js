@@ -12,6 +12,7 @@
             this.navigate(window.location.hash.replace(/^#/, ''));
         }
 
+        this.registerComponents();
         this.createNavLinks();
         this.setStatistics();
 
@@ -110,55 +111,91 @@
         }.bind(this));
     };
 
+    UI.prototype.registerComponents = function () {
+        var template = document.querySelector("template");
+        var Proto = Object.create(HTMLElement.prototype);
+
+        Proto.createdCallback = function () {
+            var root = this.createShadowRoot();
+            root.appendChild(document.importNode(template.content, true));
+        };
+
+        Proto.attachedCallback = function () {
+            this.shadowRoot.querySelector("#label").innerHTML = this.label;
+            this.shadowRoot.querySelector("#writeup").innerHTML = this.writeup;
+            this.shadowRoot.querySelector("#subtitle").innerHTML = this.subtitle;
+            this.shadowRoot.querySelector("#subsubtitle").innerHTML = this.subsubtitle;
+            this.shadowRoot.querySelector("#note").innerHTML = this.note;
+            this.shadowRoot.querySelector("#note").setAttribute("data-label", this.noteLabel);
+        };
+
+        var ListEntry = document.registerElement("list-entry", {
+            prototype: Proto
+        });
+    };
+
     UI.prototype.createEntry = function (data, path, noteLabel) {
-        var el = $($("#dummy-entry").html());
+        var el = document.createElement("list-entry");
+        el.label = data.label;
+        el.writeup = data.writeup;
+        el.subtitle = data.subtitle;
+        el.subsubtitle = data.subsubtitle;
+        el.note = data.note.join(", ");
+        el.noteLabel = noteLabel;
 
-        el.children('.label').text(data.label);
-        el.find('.text .title').text(data.title);
-        el.find('.text .subtitle').text(data.subtitle);
-        el.find('.text .subsubtitle').text(data.subsubtitle);
+        // el.populate();
 
-        var parHtml = "<p></p>";
-        if (typeof data.writeup !== 'string') {
-            data.writeup.map(function (paragraph){
-                el.find('.text .writeup').append($(parHtml).text(paragraph));
-            });
-        } else {
-            el.find('.text .writeup').append($(parHtml).text(data.writeup));
-        }
-
-        el.find('.text .note').text(data.note.join(", "));
-        el.find('.text .note').attr("data-label", noteLabel);
-
-        if (data.links) {
-            data.links.map(function (e) {
-                var link = $($("#dummy-link").html());
-                link.children().attr('href', e.href);
-                link.children().text(e.title);
-                el.find('.text .links').append(link);
-            });
-        }
-
-        if (data.images.background) {
-            el.css("background-image", 'url("' + path + data.images.background + '")');
-        }
-
-        if (data.images.poster) {
-            el.children('.image-container').css("background-image", 'url("' + path + data.images.poster + '")');
-        }
-
-        if ((typeof data.writeup === 'string' && data.writeup.length < 415) ||
-            (typeof data.writeup === 'object' && data.writeup.join().length < 415)) {
-            var writeup = el.find('.text .writeup');
-            writeup.css({
-                "-moz-column-fill": "auto",
-                "-webkit-column-fill": "auto",
-                "column-fill": "auto",
-                "-webkit-columns": "80rem" // Webkit does not have column-fill, this is a hack to make it single line
-            });
-        }
+        console.log(el);
 
         return el;
+        // var el = $($("#dummy-entry").html());
+
+        // el.children('.label').text(data.label);
+        // el.find('.text .title').text(data.title);
+        // el.find('.text .subtitle').text(data.subtitle);
+        // el.find('.text .subsubtitle').text(data.subsubtitle);
+
+        // var parHtml = "<p></p>";
+        // if (typeof data.writeup !== 'string') {
+        //     data.writeup.map(function (paragraph){
+        //         el.find('.text .writeup').append($(parHtml).text(paragraph));
+        //     });
+        // } else {
+        //     el.find('.text .writeup').append($(parHtml).text(data.writeup));
+        // }
+
+        // el.find('.text .note').text(data.note.join(", "));
+        // el.find('.text .note').attr("data-label", noteLabel);
+
+        // if (data.links) {
+        //     data.links.map(function (e) {
+        //         var link = $($("#dummy-link").html());
+        //         link.children().attr('href', e.href);
+        //         link.children().text(e.title);
+        //         el.find('.text .links').append(link);
+        //     });
+        // }
+
+        // if (data.images.background) {
+        //     el.css("background-image", 'url("' + path + data.images.background + '")');
+        // }
+
+        // if (data.images.poster) {
+        //     el.children('.image-container').css("background-image", 'url("' + path + data.images.poster + '")');
+        // }
+
+        // if ((typeof data.writeup === 'string' && data.writeup.length < 415) ||
+        //     (typeof data.writeup === 'object' && data.writeup.join().length < 415)) {
+        //     var writeup = el.find('.text .writeup');
+        //     writeup.css({
+        //         "-moz-column-fill": "auto",
+        //         "-webkit-column-fill": "auto",
+        //         "column-fill": "auto",
+        //         "-webkit-columns": "80rem" // Webkit does not have column-fill, this is a hack to make it single line
+        //     });
+        // }
+
+        // return el;
     };
 
     UI.prototype.createLink = function (template, data) {
