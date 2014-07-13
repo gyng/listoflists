@@ -121,12 +121,17 @@
         };
 
         Proto.attachedCallback = function () {
-            this.shadowRoot.querySelector("#label").innerHTML = this.label;
-            this.shadowRoot.querySelector("#writeup").innerHTML = this.writeup;
-            this.shadowRoot.querySelector("#subtitle").innerHTML = this.subtitle;
-            this.shadowRoot.querySelector("#subsubtitle").innerHTML = this.subsubtitle;
-            this.shadowRoot.querySelector("#note").innerHTML = this.note;
-            this.shadowRoot.querySelector("#note").setAttribute("data-label", this.noteLabel);
+            this.shadowRoot.querySelector(".label").innerHTML = this.label;
+            this.shadowRoot.querySelector(".title").innerHTML = this.title;
+            this.shadowRoot.querySelector(".writeup").innerHTML = this.writeup;
+            this.shadowRoot.querySelector(".subtitle").innerHTML = this.subtitle;
+            this.shadowRoot.querySelector(".subsubtitle").innerHTML = this.subsubtitle;
+            this.shadowRoot.querySelector(".note").innerHTML = this.note;
+            this.shadowRoot.querySelector(".note").setAttribute("data-label", this.noteLabel);
+
+            if (this.images.poster) {
+                $(this.shadowRoot.querySelector(".image-container")).css("background-image", 'url("' + this.path + this.images.poster + '")');
+            }
         };
 
         var ListEntry = document.registerElement("list-entry", {
@@ -137,11 +142,15 @@
     UI.prototype.createEntry = function (data, path, noteLabel) {
         var el = document.createElement("list-entry");
         el.label = data.label;
+        el.title = data.title;
         el.writeup = data.writeup;
         el.subtitle = data.subtitle;
         el.subsubtitle = data.subsubtitle;
         el.note = data.note.join(", ");
         el.noteLabel = noteLabel;
+        el.images = data.images;
+
+        el.path = path;
 
         // el.populate();
 

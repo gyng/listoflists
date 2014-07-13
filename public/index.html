@@ -68,19 +68,18 @@
     </div>
 
     <template>
-        <li class="entry">
-        dicks
-            <div id="label"></div>
-            <div id="image-container"></div>
-            <div id="text">
-               <div id="title"></div>
-               <div id="subtitle"></div>
-               <div id="subsubtitle"></div>
-               <div id="writeup"></div>
-               <div id="note"></div>
-               <ul id="links"></ul>
-            </div>
-        </li>
+        <style>@import url("stylesheets/lol.css");</style>
+
+        <div class="label"></div>
+        <div class="image-container"></div>
+        <div class="text">
+           <div class="title"></div>
+           <div class="subtitle"></div>
+           <div class="subsubtitle"></div>
+           <div class="writeup"></div>
+           <div class="note"></div>
+           <ul class="links"></ul>
+        </div>
     </template>
 
     <div class="template" id="dummy-latest-entry">
@@ -96,12 +95,5 @@
     <div class="template" id="dummy-nav-link">
         <li class="page list-link"><a href="#"></a></li>
     </div>
-
-    <template>
-        <style> /*...*/ </style>
-        <div id="label"><content></content></div>
-        Value: <span id="counterVal">{{counter}}</span><br>
-        <button on-tap="{{increment}}">Increment</button>
-    </template>
 </body>
 </html>
