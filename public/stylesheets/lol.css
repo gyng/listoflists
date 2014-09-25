@@ -181,10 +181,9 @@ nav .active-page {
     display: flex;
     flex-direction: row;
     min-height: 30rem;
-    background-position: 0 0;
+    background-position: 33% 33%;
     background-size: cover;
     padding: 4rem;
-    transition: background-position 0.2s; /* My little Chrome can't be this slow! */
 }
 
 .entry div {

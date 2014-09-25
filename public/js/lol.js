@@ -16,7 +16,6 @@
         this.setStatistics();
 
         $('.list-link').click(this.linkClick.bind(this));
-        $(window).scroll(this.parallaxBackground);
     }
 
     UI.prototype.linkClick = function (e) {
@@ -27,15 +26,6 @@
         el.addClass('active-page');
         this.navigate(el.attr('data-url'), {
             "updateState": true
-        });
-    };
-
-    UI.prototype.parallaxBackground = function () {
-        $('.entry').each(function (i, e) {
-            var elementHeight = e.getBoundingClientRect().bottom - e.getBoundingClientRect().top;
-            var h = $(window).height() + elementHeight;
-            var pos = Math.min(100, Math.max(0, 100 * (h - e.getBoundingClientRect().top - elementHeight) / h));
-            $(e).css("background-position", "33% " + pos + "%");
         });
     };
 
