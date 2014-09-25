@@ -70,7 +70,7 @@
         if (typeof options === 'undefined') options = {};
 
         $.getJSON(url, function (data) {
-                if (options.updateState === true) {
+            if (options.updateState === true) {
                 var state = {};
                 state.url = url;
                 state.activePage = $(".active-page").attr("data-url");
@@ -84,7 +84,6 @@
 
             document.title = data.title;
             this.populateEntries(data);
-            this.parallaxBackground();
         }.bind(this));
     };
 
