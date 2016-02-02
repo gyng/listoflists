@@ -255,6 +255,13 @@ nav .active-page {
     margin: 0;
 }
 
+.writeup .long {
+    -moz-column-fill: 'auto';
+    -webkit-column-fill: 'auto';
+    column-fill: 'auto';
+    -webkit-columns: '80rem';
+}
+
 .note {
     margin: 2rem 0 0 0;
     font-size: 1.6rem;

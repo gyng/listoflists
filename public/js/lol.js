@@ -154,12 +154,7 @@
     if ((typeof data.writeup === 'string' && data.writeup.length < 415) ||
       (typeof data.writeup === 'object' && data.writeup.join().length < 415)) {
       var writeup = el.find('.text .writeup');
-      writeup.css({
-        '-moz-column-fill': 'auto',
-        '-webkit-column-fill': 'auto',
-        'column-fill': 'auto',
-        '-webkit-columns': '80rem' // Webkit does not have column-fill, this is a hack to make it single line
-      });
+      writeup.addClass('long');
     }
 
     return el;
