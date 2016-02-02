@@ -2,7 +2,11 @@
 
 List of Lists is a small Javascript + Sinatra web application for the creation and presentation of JSON-defined lists. Flexbox support is required for viewing. I also hate parallax scrolling effects which is why I'm using them.
 
-## Installation
+## Installation, without file uploads
+
+1. Point web server to `/public`
+
+## Installation, with file uploads
 
 1. Install Ruby
 2. Install sinatra and thin gems
