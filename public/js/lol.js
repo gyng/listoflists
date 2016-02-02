@@ -83,13 +83,28 @@
       $('.list').show();
 
       document.title = data.title;
+      this.loadCSS(data);
       this.populateEntries(data);
     }.bind(this));
   };
 
+  UI.prototype.loadCSS = function (data) {
+    var injectedStyleEl = $('#injected-style');
+    if (data.css) {
+      var path = this.getRelativePath(data);
+      injectedStyleEl.attr('href', path + data.css);
+    } else {
+      injectedStyleEl.href = '';
+    }
+  };
+
+  UI.prototype.getRelativePath = function (data) {
+    return data.relative_path ? data.path.join('/') + '/' : '';
+  };
+
   UI.prototype.populateEntries = function (data) {
     $('.entries').empty();
-    var relPath = data.relative_path ? data.path.join('/') + '/' : '';
+    var relPath = this.getRelativePath(data);
     $('.list-header').children().text('');
     $('.list-title').text(data.title);
     $('.list-subtitle').text(data.subtitle);

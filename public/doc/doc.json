@@ -1,9 +1,10 @@
 {
   "title": "Documentation",
   "subtitle": "version 0.1 · images, text: Wikipedia/NASA",
-  "relative_path": false,
-  "path": [],
+  "relative_path": true,
+  "path": ["doc"],
   "note_label": "note ",
+  "css": "injected.css",
   "entries": [
     {
       "label": 1,
@@ -21,7 +22,7 @@
       "links": [
         {
           "title": "Sample list JSON",
-          "href": "doc/doc.json"
+          "href": "doc.json"
         },
         {
           "title": "Nagivation links JSON",
@@ -62,8 +63,8 @@
       "writeup": "The Saturn V (pronounced \"Saturn Five\") was an American human-rated expendable rocket used by NASA's Apollo and Skylab programs from 1967 until 1973. A multistage liquid-fueled launch vehicle, NASA launched 13 Saturn Vs from the Kennedy Space Center, Florida with no loss of crew or payload. It remains the tallest, heaviest, and most powerful rocket ever brought to operational status and still holds the record for heaviest payload launched and heaviest payload capacity to Low Earth orbit (LEO).",
       "note": [],
       "images": {
-        "background": "doc/bg.jpg",
-        "poster": "doc/poster.png"
+        "background": "bg.jpg",
+        "poster": "poster.png"
       }
     },
     {
@@ -72,10 +73,14 @@
       "subtitle": "それは虎だ",
       "subsubtitle": "",
       "writeup": "The tiger (Panthera tigris) is the largest cat species, reaching a total body length of up to 3.3 m (11 ft) and weighing up to 306 kg (675 lb). Its most recognizable feature is a pattern of dark vertical stripes on reddish-orange fur with a lighter underside. It has exceptionally stout teeth, and the canines are the longest among living felids with a crown height of as much as 74.5 mm (2.93 in) or even 90 mm (3.5 in).[4] In zoos, tigers have lived for 20 to 26 years, which also seems to be their longevity in the wild.[5] They are territorial and generally solitary but social animals, often requiring large contiguous areas of habitat that support their prey requirements. This, coupled with the fact that they are indigenous to some of the more densely populated places on Earth, has caused significant conflicts with humans.",
-      "note": ["There is no formatting (Panthera tigris should be italic) defined, and that this is an array of strings", "which are joined by commas. The note label is defined in the top-level attribute \"note_label\"."],
+      "note": [
+        "There is no formatting (Panthera tigris should be italic) defined, and that this is an array of strings",
+        "which are joined by commas. The note label is defined in the top-level attribute \"note_label\".",
+        "Custom CSS can be injected by adding the path to the CSS file to the top-level 'css' key."
+      ],
       "images": {
         "background": "",
-        "poster": "doc/poster2.jpg"
+        "poster": "poster2.jpg"
       }
     }
   ]

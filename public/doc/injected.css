@@ -1,0 +1,7 @@
+@keyframes blink {
+  to { visibility: hidden; }
+}
+
+.entry:last-child .title {
+    animation: blink 1s steps(5, start) infinite;
+}
