@@ -131,8 +131,10 @@
       el.find('.text .writeup').append($(parHtml).text(data.writeup));
     }
 
-    el.find('.text .note').text(data.note.join(', '));
-    el.find('.text .note').attr('data-label', noteLabel);
+    if (data.note) {
+      el.find('.text .note').text(data.note.join(', '));
+      el.find('.text .note').attr('data-label', noteLabel);
+    }
 
     if (data.links) {
       data.links.map(function (e) {
