@@ -240,10 +240,6 @@ nav .active-page {
 }
 
 .writeup {
-    -ms-columns: 50rem;
-    -moz-columns: 50rem;
-    -webkit-columns: 50rem;
-    columns: 50rem;
     margin: 2rem 0 0 0;
     min-height: 25%;
     font-size: 1.8rem;
@@ -260,6 +256,13 @@ nav .active-page {
     -webkit-column-fill: 'auto';
     column-fill: 'auto';
     -webkit-columns: '80rem';
+}
+
+.columnar-text {
+    -ms-columns: 50rem;
+    -moz-columns: 50rem;
+    -webkit-columns: 50rem;
+    columns: 50rem;
 }
 
 .note {

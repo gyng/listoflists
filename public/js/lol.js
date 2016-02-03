@@ -153,10 +153,11 @@
       el.children('.image-container').css('background-image', 'url("' + path + data.images.poster + '")');
     }
 
-    if ((typeof data.writeup === 'string' && data.writeup.length < 415) ||
-      (typeof data.writeup === 'object' && data.writeup.join().length < 415)) {
+    if ((typeof data.writeup === 'string' && data.writeup.length > 415) ||
+      (typeof data.writeup === 'object' && data.writeup.join().length > 415)) {
       var writeup = el.find('.text .writeup');
       writeup.addClass('long');
+      writeup.addClass('columnar-text');
     }
 
     return el;
