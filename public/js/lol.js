@@ -56,7 +56,7 @@
 
       if (e.state.activePage) {
         $('.active-page').removeClass('active-page');
-        $('.page[data-url="' + e.state.activePage + '').addClass('active-page');
+        $('.page > a[data-url="' + e.state.activePage + '"]').addClass('active-page');
       }
     } else if (!window.location.hash) {
       // We don't have a list loaded, display landing
