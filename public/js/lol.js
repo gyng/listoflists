@@ -123,7 +123,7 @@
     el.find('.text .subsubtitle').text(data.subsubtitle);
 
     var parHtml = '<p></p>';
-    if (typeof data.writeup !== 'string') {
+    if (Array.isArray(data.writeup)) {
       data.writeup.map(function (paragraph) {
         el.find('.text .writeup').append($(parHtml).text(paragraph));
       });
@@ -136,7 +136,7 @@
       el.find('.text .note').attr('data-label', noteLabel);
     }
 
-    if (data.links) {
+    if (Array.isArray(data.links)) {
       data.links.map(function (e) {
         var link = $($('#dummy-link').html());
         link.children().attr('href', e.href);
