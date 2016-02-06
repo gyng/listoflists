@@ -1,7 +1,9 @@
 (function () {
   'use strict';
+  var bLazy;
 
   $(document).ready(function () {
+    bLazy = new Blazy();
     new UI();
   });
 
@@ -85,6 +87,7 @@
       document.title = data.title;
       this.loadCSS(data);
       this.populateEntries(data);
+      bLazy.revalidate();
     }.bind(this));
   };
 
@@ -150,14 +153,23 @@
     }
 
     if (data.images.poster) {
-      el.children('.image-container').css('background-image', 'url("' + path + data.images.poster + '")');
+      var imageContainer = el.children('.image-container');
+      var transparentGif = 'data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==';
+      imageContainer.attr('data-src', path + data.images.poster);
+      imageContainer.css('background-image', transparentGif);
     }
 
+    var writeup;
     if ((typeof data.writeup === 'string' && data.writeup.length > 415) ||
       (typeof data.writeup === 'object' && data.writeup.join().length > 415)) {
-      var writeup = el.find('.text .writeup');
+      writeup = el.find('.text .writeup');
       writeup.addClass('long');
       writeup.addClass('columnar-text');
+    } else if (typeof data.writeup === 'undefined' ||
+      data.writeup === null || data.writeup === '') {
+      writeup = el.find('.text');
+
+      writeup.css('background', 'transparent');
     }
 
     return el;
