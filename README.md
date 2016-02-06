@@ -28,6 +28,7 @@ The port can be changed in `lol.rb`. Change `set :port, 8083` to whichever port 
 * Flexbox responsive layout
 * JSON-defined lists
 * Decent design
+* Optional per-list CSS injection
 * Sinatra webapp for basic statistics and JSON list uploads (no more cross-domain restrictions!)
 
 ### TODO
