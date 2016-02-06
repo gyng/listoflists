@@ -97,7 +97,7 @@
       var path = this.getRelativePath(data);
       injectedStyleEl.attr('href', path + data.css);
     } else {
-      injectedStyleEl.href = '';
+      injectedStyleEl.attr('href', '');
     }
   };
 
