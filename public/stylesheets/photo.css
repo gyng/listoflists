@@ -1,0 +1,65 @@
+/* mogrify -path . -auto-orient -resize 50x50% -quality 90 *.jpg */
+
+* {
+  transition: background-color 0;
+}
+
+body {
+  background-color: #262626;
+  color: #DDDDDD;
+}
+
+a {
+  color: #DDDDDD !important;
+}
+
+a:hover {
+  color: #000000 !important;
+}
+
+nav .active-page {
+  color: #000000 !important;
+}
+
+.entry {
+  flex-direction: column;
+  background-position: center;
+}
+
+.label {
+  display: none;
+}
+
+.image-container {
+  min-height: calc(100vw * 0.45);
+  width: 100%;
+  width: 85vw;
+  margin: auto auto;
+  background-position: center;
+  background-size: contain;
+}
+
+.title {
+  text-align: center;
+  text-shadow: 0 1px 0 black;
+}
+
+.text {
+  background: transparent;
+}
+
+.writeup {
+  text-align: center;
+  margin: 2rem auto 0 auto;
+}
+
+@media only screen and (min--moz-device-pixel-ratio: 2),
+       only screen and (-o-min-device-pixel-ratio: 2/1),
+       only screen and (-webkit-min-device-pixel-ratio: 2),
+       only screen and (min-device-pixel-ratio: 2),
+       only screen and (max-width: 749px) {
+
+  .image-container {
+    min-height: 40vh;
+  }
+}
