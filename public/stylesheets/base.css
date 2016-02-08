@@ -19,6 +19,7 @@ body {
     -webkit-font-feature-settings: "liga", "dlig";
     font-feature-settings: "liga", "dlig";
     word-wrap: break-word;
+    line-height: 5rem;
 }
 
 nav {
@@ -28,7 +29,7 @@ nav {
 nav ul {
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap-reverse;
+    flex-wrap: wrap;
 }
 
 nav li {
@@ -298,16 +299,8 @@ nav .active-page {
         display: block;
     }
 
-    nav ul {
-        display: block;
-        text-align: right;
-        margin: 0;
-        padding: 0;
-        white-space: nowrap;
-    }
-
     nav li {
-        padding: 2rem 0;
+        padding: 1rem 0;
     }
 
     .text {
