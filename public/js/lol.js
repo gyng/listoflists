@@ -84,7 +84,7 @@
       $('.landing').hide();
       $('.list').show();
 
-      document.title = data.title;
+      document.title = data.title || (data.entries[0] ? data.entries[0].title : false) || 'List of Lists';
       this.loadCSS(data);
       this.populateEntries(data);
       bLazy.revalidate();
