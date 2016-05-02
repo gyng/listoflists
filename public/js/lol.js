@@ -1,11 +1,7 @@
 (function () {
   'use strict';
-  var bLazy;
 
-  $(document).ready(function () {
-    bLazy = new Blazy();
-    new UI();
-  });
+  var bLazy;
 
   function UI() {
     window.onpopstate = this.onPopState.bind(this);
@@ -27,7 +23,7 @@
     var el = $(e.target);
     el.addClass('active-page');
     this.navigate(el.attr('data-url'), {
-      'updateState': true
+      updateState: true
     });
   };
 
@@ -127,7 +123,7 @@
 
     var parHtml = '<p></p>';
     if (Array.isArray(data.writeup)) {
-      data.writeup.map(function (paragraph) {
+      data.writeup.each(function (paragraph) {
         el.find('.text .writeup').append($(parHtml).text(paragraph));
       });
     } else {
@@ -140,7 +136,7 @@
     }
 
     if (Array.isArray(data.links)) {
-      data.links.map(function (e) {
+      data.links.each(function (e) {
         var link = $($('#dummy-link').html());
         link.children().attr('href', e.href);
         link.children().text(e.title);
@@ -180,7 +176,7 @@
     var link = el.find('a');
     link.attr({
       'data-url': data.path,
-      'href': data.href || '#'
+      href: data.href || '#'
     });
     link.text(data.title);
 
@@ -190,4 +186,9 @@
 
     return el;
   };
-})();
+
+  $(document).ready(function () {
+    bLazy = new Blazy();
+    new UI();
+  });
+}());
