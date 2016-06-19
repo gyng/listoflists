@@ -29,7 +29,7 @@
 
   UI.prototype.createNavLinks = function () {
     $.getJSON('nav_links.json', function (data) {
-      data.map(function (e) {
+      data.forEach(function (e) {
         $('.nav-links').append(this.createLink('#dummy-nav-link', e));
       }.bind(this));
     }.bind(this));
@@ -37,7 +37,7 @@
 
   UI.prototype.setStatistics = function () {
     $.getJSON('latest.json', function (data) {
-      data.map(function (e) {
+      data.forEach(function (e) {
         $('.latest-uploads').append(this.createLink('#dummy-latest-entry', e));
       }.bind(this));
     }.bind(this));
@@ -108,7 +108,7 @@
     $('.list-title').text(data.title);
     $('.list-subtitle').text(data.subtitle);
 
-    data.entries.map(function (entry) {
+    data.entries.forEach(function (entry) {
       $('.entries').append(this.createEntry(entry, relPath, data.note_label));
     }.bind(this));
   };
