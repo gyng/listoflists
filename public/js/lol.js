@@ -123,7 +123,7 @@
 
     var parHtml = '<p></p>';
     if (Array.isArray(data.writeup)) {
-      data.writeup.each(function (paragraph) {
+      data.writeup.forEach(function (paragraph) {
         el.find('.text .writeup').append($(parHtml).text(paragraph));
       });
     } else {
@@ -136,7 +136,7 @@
     }
 
     if (Array.isArray(data.links)) {
-      data.links.each(function (e) {
+      data.links.forEach(function (e) {
         var link = $($('#dummy-link').html());
         link.children().attr('href', e.href);
         link.children().text(e.title);
