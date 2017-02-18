@@ -1,0 +1,13 @@
+[
+  {
+    "external": true,
+    "href": "./index.html",
+    "path": "./index.html",
+    "title": "HOME"
+  },
+  {
+    "href": "#",
+    "path": "doc/doc.json",
+    "title": "DOCS"
+  }
+]

@@ -27,11 +27,20 @@
   };
 
   UI.prototype.createNavLinks = function () {
-    $.getJSON('nav_links.json', function (data) {
+    var createLinks = function (data) {
       data.forEach(function (e) {
         $('.nav-links').append(this.createLink('#dummy-nav-link', e));
       }.bind(this));
-    }.bind(this));
+    }.bind(this);
+
+    $.getJSON('nav_links.json', function (data) {
+      createLinks(data);
+    }).fail(function () {
+      // No custom nav_links.json, roll back to default
+      $.getJSON('nav_links.default.json', function (defaultData) {
+        createLinks(defaultData);
+      });
+    });
   };
 
   // For window.onpopstate.

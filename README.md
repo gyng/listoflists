@@ -1,6 +1,6 @@
 # listoflists
 
-listoflists is a small file-based declarative static site presenter in vanilla JS.
+listoflists is a small file-based declarative static site presenter in vanilla JavaScript.
 
 Designed for presenting collections of things such as lists or photos.
 
@@ -11,17 +11,33 @@ Designed for presenting collections of things such as lists or photos.
 * Declarative, file-based, JSON-defined pages
 * Responsive flexbox layout
 * Optional per-list CSS injection
+* Vanilla JavaScript
 
 ## Installation
 
-1. Point a web server to `public`
+1. Point a web server at `public/`
 
 ## Usage
 
 1. Put your files in a directory, along with a JSON file for content
-2. Point to a CSS stylesheet to override styles for the page if desired. Two styles are included in `public/stylesheets`: `base.css` (included with every page) and `photo.css`. You can use your own stylesheet.
-3. Visit your rendered page at `index.html/path/to/content.json`
-4. Configure navbar links in `public/nav_links.json`
+
+2. Point to a CSS stylesheet to override styles for the page if desired. You can use your own stylesheet by changing the `css` key in your list JSON.
+
+   Two styles are included in `public/stylesheets`:
+
+   * `base.css` (included with every page)
+   * `photo.css` (for convenience)
+
+3. Create a `nav_links` override and configure them.
+
+    lol will look for `nav_links.json` before falling back to `nav_links.default.json`. You can leave `nav_links.json` as an empty array if you do not want your lists to appear on the navbar.
+
+        $ cp public/nav_links.default.json public/nav_links.json
+        $ vi public/nav_links.json
+
+4. Visit your rendered page at `index.html#path/to/content.json`
+
+[Example documentation list](doc/doc.json)
 
 ## Generating a list
 
