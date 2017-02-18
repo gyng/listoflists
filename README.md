@@ -37,7 +37,7 @@ Designed for presenting collections of things such as lists or photos.
 
 4. Visit your rendered page at `index.html#path/to/content.json`
 
-[Example documentation list](doc/doc.json)
+[Example documentation list](public/doc/doc.json)
 
 ## Generating a list
 
