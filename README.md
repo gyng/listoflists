@@ -11,21 +11,10 @@ Designed for presenting collections of things such as lists or photos.
 * Declarative, file-based, JSON-defined pages
 * Responsive flexbox layout
 * Optional per-list CSS injection
-* Optional Sinatra webapp for basic statistics and JSON list uploads (to get around cross-domain restrictions)
 
 ## Installation
 
-### Without file uploads
-
-1. Point web server to `public`
-
-### With file uploads
-
-1. Install Ruby
-2. `gem install sinatra thin`
-4. The server port can be changed in `lol.rb`. Change `set :port, 8083` to desired port.
-3. `ruby lol.rb -o 0.0.0.0`
-5. View your site at [http://0.0.0.0:8083](http://0.0.0.0:8083)
+1. Point a web server to `public`
 
 ## Usage
 
@@ -47,5 +36,4 @@ Designed for presenting collections of things such as lists or photos.
 
 ### TODO
 
-* JSON list creator
 * Move from *Feeling-Driven Development* to a proper test framework.

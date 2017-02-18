@@ -11,7 +11,6 @@
     }
 
     this.createNavLinks();
-    this.setStatistics();
 
     $('.list-link').click(this.linkClick.bind(this));
   }
@@ -33,18 +32,6 @@
         $('.nav-links').append(this.createLink('#dummy-nav-link', e));
       }.bind(this));
     }.bind(this));
-  };
-
-  UI.prototype.setStatistics = function () {
-    $.getJSON('latest.json', function (data) {
-      data.forEach(function (e) {
-        $('.latest-uploads').append(this.createLink('#dummy-latest-entry', e));
-      }.bind(this));
-    }.bind(this));
-
-    $.getJSON('statistics.json', function (data) {
-      $('.total-uploads').text(data.uploads);
-    });
   };
 
   // For window.onpopstate.

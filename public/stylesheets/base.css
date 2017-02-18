@@ -21,11 +21,6 @@ body {
     word-wrap: break-word;
 }
 
-nav {
-    min-height: 5rem;
-    line-height: 2rem;
-}
-
 nav ul {
     display: flex;
     flex-direction: row;
@@ -39,8 +34,9 @@ nav li {
 }
 
 nav a {
-    padding: 1rem 2rem;
+    line-height: 4rem;
     margin: 0 0 0 2rem;
+    padding: 1rem 2rem;
 }
 
 nav a:active {
@@ -73,30 +69,6 @@ nav .active-page {
     width: 100%;
 }
 
-.load-list-input {
-    width: 75%;
-    max-width: 80rem;
-    font-size: 3.6rem;
-    font-family: 'Vollkorn', Georgia, serif;
-    border: 0;
-    border-bottom: solid #ddd 2px;
-}
-
-.load-list-submit {
-    width: 10%;
-    border: 0;
-    padding: 2rem;
-    font-size: 3.6rem;
-    min-height: 100%;
-    background-color: transparent;
-    color: #444;
-    cursor: pointer;
-}
-
-.load-list-submit:hover {
-    background-color: #ddd;
-}
-
 .landing form {
     display: flex;
     align-items: center;
@@ -104,49 +76,19 @@ nav .active-page {
     width: 100%;
 }
 
-.landing .statistics {
-    display: flex;
-    flex-direction: column;
-    max-width: calc(80rem + 10%);
-    width: 85%;
-    color: #666;
-}
-
-.landing .statistics h2 {
-    font-weight: normal;
-    font-family:'Marcellus SC', serif;
-    margin: 2rem 0 0 0;
-    font-size: 1.6rem;
-}
-
-.landing .statistics .latest-uploads {
-    list-style: none;
-    padding: 0;
-}
-
-.landing .statistics .latest-entry {
-    font-family:'Marcellus SC', serif;
-    text-transform: lowercase;
-    font-size: 1.6rem;
-    padding: 0;
-    margin: 0;
-}
-
-.landing .total-uploads {
-    font-size: 1.6rem;
-    font-family:'Marcellus SC', serif;
-}
-
-.landing .total-uploads:after {
-    content: ' total uploads';
-}
-
 .landing .site-title {
     font-family:'Marcellus SC', serif;
     font-size: 4.8rem;
     max-width: calc(80rem + 10%);
     width: 85%;
-    margin: 0 0 6rem 0;
+    margin: 0;
+}
+
+.landing .site-subtitle {
+    font-family:'Vollkorn', Georgia, serif;
+    font-size: 1.8rem;
+    max-width: calc(80rem + 10%);
+    width: 85%;
 }
 
 .list {
