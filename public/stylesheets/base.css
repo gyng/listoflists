@@ -19,6 +19,7 @@ body {
     -webkit-font-feature-settings: "liga", "dlig";
     font-feature-settings: "liga", "dlig";
     word-wrap: break-word;
+    transition: background-color 0.2s;
 }
 
 nav ul {
@@ -131,7 +132,7 @@ nav .active-page {
 }
 
 .entry div {
-    transition: all 0.5s;
+    transition: all 0.3s;
 }
 
 .label {
