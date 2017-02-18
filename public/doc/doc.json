@@ -14,9 +14,8 @@
       "writeup": [
         "Lists are defined in JSON, and the format is likely to change at this early stage. Check out doc.json [1] for the JSON file defining this page. Leave \"relative_path\" set to false as it is used for internal lists. All fields are optional: empty fields are not rendered.",
         "The layout requires flexbox support (latest Firefox or Chrome) and uses @media queries (responsive – resize your browser window!).",
-        "I also hate parallax scrolling effects with a passion and that is why I'm using them extensively here!",
         "If the writeup is an array it is treated as a collection of paragraphs, as seen in this entry.",
-        "Navigation links at the top of the page (Home, Docs) are defined in nav_links.json. [2]"
+        "Navigation links at the top of the page (Home, Docs) are defined in nav_links.json, with a default fallback nav_links.default.json. [2]"
         ],
       "note": [],
       "links": [
@@ -25,8 +24,8 @@
           "href": "doc.json"
         },
         {
-          "title": "Nagivation links JSON",
-          "href": "nav_links.json"
+          "title": "Nagivation links default JSON",
+          "href": "nav_links.default.json"
         }
       ],
       "images": {
@@ -40,7 +39,7 @@
       "subtitle": "",
       "subsubtitle": "",
       "writeup": [
-        "List of Lists is a small Javascript + Sinatra application for the presentation of lists.",
+        "List of Lists is a small Javascript application for the presentation of lists.",
         "Check out the GitHub repository [1] for the source code."
         ],
       "note": ["LoL is licensed under the MIT license."],
