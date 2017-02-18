@@ -31,11 +31,11 @@ nav li {
     font-size: 1.6rem;
     font-family: 'Marcellus SC', serif;
     list-style-type: none;
+    margin: 0 0 0 2rem;
 }
 
 nav a {
     line-height: 4rem;
-    margin: 0 0 0 2rem;
     padding: 1rem 2rem;
 }
 
