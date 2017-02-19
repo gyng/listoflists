@@ -19,7 +19,7 @@ body {
     -webkit-font-feature-settings: "liga", "dlig";
     font-feature-settings: "liga", "dlig";
     word-wrap: break-word;
-    transition: background-color 0.2s;
+    transition: background-color .1s;
 }
 
 nav ul {
@@ -141,7 +141,7 @@ nav .active-page {
     font-weight: 400;
     font-size: 3.6rem;
     color: #000;
-    text-shadow: 0 0 2px rgba(255, 255, 255, 0.3);
+    text-shadow: 0 0 2px rgba(255, 255, 255, .3);
 }
 
 .image-container {
@@ -175,7 +175,7 @@ nav .active-page {
     justify-content: flex-start;
     padding: 0 2rem 2rem 2rem;
     background: #fff;
-    background: rgba(255, 255, 255, 0.9);
+    background: rgba(255, 255, 255, .9);
     font-family: 'Vollkorn', Georgia, serif;
     font-weight: 400;
 }
@@ -259,4 +259,13 @@ nav .active-page {
         min-height: 20rem;
         margin: 0 0 2rem 0;
     }
+}
+
+.b-lazy {
+    transition: opacity .1s ease-out;
+    opacity: 0;
+}
+
+.b-lazy.b-loaded, .b-lazy.b-error {
+    opacity: 1;
 }
