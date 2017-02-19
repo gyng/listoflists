@@ -35,7 +35,7 @@ Designed for presenting collections of things such as lists or photos.
         $ cp public/nav_links.default.json public/nav_links.json
         $ vi public/nav_links.json
 
-4. Visit your rendered page at `index.html#path/to/content.json`
+4. Visit your rendered page at `index.html#path/to/content.json`. If you want to run this fully offline, you will need to vendor both fonts and jQuery.
 
 [Example documentation list](public/doc/doc.json)
 
