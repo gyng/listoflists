@@ -27,9 +27,11 @@ list_hash = {
 
 File.write("#{current_directory}.json", JSON.pretty_generate(list_hash))
 
+path = File.join('data', current_directory, "#{current_directory}.json")
+
 nav_link_hash = {
-  href: '#',
-  path: File.join('data', current_directory, "#{current_directory}.json"),
+  href: "##{path}",
+  path: path,
   title: current_directory
 }
 
