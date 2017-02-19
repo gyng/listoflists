@@ -6,7 +6,7 @@
     "title": "HOME"
   },
   {
-    "href": "#",
+    "href": "doc/doc.json",
     "path": "doc/doc.json",
     "title": "DOCS"
   }
