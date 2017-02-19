@@ -131,10 +131,6 @@ nav .active-page {
     padding: 4rem;
 }
 
-.entry div {
-    transition: all 0.3s;
-}
-
 .label {
     display: flex;
     flex: 2;
