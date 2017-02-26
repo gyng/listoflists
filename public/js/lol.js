@@ -36,7 +36,7 @@
     $.getJSON('nav_links.json', function (data) {
       createLinks(data);
     }).fail(function () {
-      // No custom nav_links.json, roll back to default
+      // No custom nav_links.json, fallback to default
       $.getJSON('nav_links.default.json', function (defaultData) {
         createLinks(defaultData);
       });
@@ -155,8 +155,7 @@
     if ((typeof data.writeup === 'string' && data.writeup.length > 415) ||
       (typeof data.writeup === 'object' && data.writeup.join().length > 415)) {
       writeup = el.find('.text .writeup');
-      writeup.addClass('long');
-      writeup.addClass('columnar-text');
+      writeup.addClass('long columnar-text');
     } else if (typeof data.writeup === 'undefined' ||
       data.writeup === null || data.writeup === '') {
       writeup = el.find('.text');
