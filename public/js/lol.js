@@ -184,7 +184,7 @@
   };
 
   $(document).ready(function () {
-    bLazy = new Blazy();
     new UI();
+    bLazy = new Blazy();
   });
 }());
