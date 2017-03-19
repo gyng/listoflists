@@ -184,6 +184,6 @@
 
   $(document).ready(function () {
     new UI();
-    bLazy = new Blazy();
+    bLazy = new Blazy({ offset: 200 });
   });
 }());
