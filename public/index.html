@@ -1,10 +1,8 @@
 <!DOCTYPE html>
 <html>
-<head>
+  <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <meta content="True" name="HandheldFriendly">
-    <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
-    <meta name="viewport" content="width=device-width">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>List of Lists</title>
 
@@ -12,61 +10,61 @@
     <link href='http://fonts.googleapis.com/css?family=Vollkorn:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="stylesheets/base.css" type="text/css">
     <link id="injected-style" rel="stylesheet" href="" type="text/css">
-</head>
-<body>
+  </head>
+  <body>
     <nav>
-        <ul class="nav-links">
-            <!-- Defined in nav_links.json -->
-        </ul>
+      <ul class="nav-links">
+        <!-- Defined in nav_links.json -->
+      </ul>
     </nav>
 
     <!-- Landing Page -->
     <div class="landing">
-        <h1 class="site-title">LIST OF LISTS</h1>
-        <p class="site-subtitle"><a href="https://github.com/gyng/listoflists/" title="GitHub">&#x1f4d6;</a> pick a list, any list</p>
+      <h1 class="site-title">LIST OF LISTS</h1>
+      <p class="site-subtitle"><a href="https://github.com/gyng/listoflists/" title="GitHub">&#x1f4d6;</a> pick a list, any list</p>
     </div>
 
     <!-- Lists -->
     <div class="list">
-        <header class="list-header">
-            <h1 class="list-title"></h1>
-            <p class="list-subtitle"></p>
-        </header>
-        <ol class="entries"></ol>
+      <header class="list-header">
+        <h1 class="list-title"></h1>
+        <p class="list-subtitle"></p>
+      </header>
+      <ol class="entries"></ol>
     </div>
 
     <!-- Templates-->
     <div class="template" id="dummy-entry">
-        <li class="entry b-lazy">
-            <div class="label"></div>
-            <div class="image-container b-lazy"></div>
-            <div class="text">
-               <div class="title"></div>
-               <div class="subtitle"></div>
-               <div class="subsubtitle"></div>
-               <div class="writeup"></div>
-               <div class="note"></div>
-               <ul class="links"></ul>
-            </div>
-        </li>
+      <li class="entry b-lazy">
+        <div class="label"></div>
+        <div class="image-container b-lazy"></div>
+        <div class="text">
+          <div class="title"></div>
+          <div class="subtitle"></div>
+          <div class="subsubtitle"></div>
+          <div class="writeup"></div>
+          <div class="note"></div>
+          <ul class="links"></ul>
+        </div>
+      </li>
     </div>
 
     <div class="template" id="dummy-latest-entry">
-        <li class="latest-entry">
-            <a class="list-link" href="#" data-url=""></a>
-        </li>
+      <li class="latest-entry">
+        <a class="list-link" href="#" data-url=""></a>
+      </li>
     </div>
 
     <div class="template" id="dummy-link">
-        <li class="entry-link"><a href=""></a></li>
+      <li class="entry-link"><a href=""></a></li>
     </div>
 
     <div class="template" id="dummy-nav-link">
-        <li class="page list-link"><a href="#"></a></li>
+      <li class="page list-link"><a href="#"></a></li>
     </div>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script src="js/blazy.min.js"></script>
-    <script src="js/lol.js"></script>
-</body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js" defer></script>
+    <script src="js/blazy.min.js" defer></script>
+    <script src="js/lol.js" defer></script>
+  </body>
 </html>
